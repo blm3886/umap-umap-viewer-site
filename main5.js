@@ -5,7 +5,9 @@ import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 
-const FILE_PATH = './saturn_joint_umap_3d_1.csv';
+const BASE = import.meta.env.BASE_URL;
+const FILE_PATH = `${BASE}saturn_joint_umap_3d.csv`;
+// const FILE_PATH = './saturn_joint_umap_3d_1.csv';
 //spawnFloatingGeneNamesForSet(setName);
 //clearFloatingGeneNames();
 
@@ -586,8 +588,8 @@ async function loadExpressionSET(setName, mode = DEFAULT_SET_AGG) {
 
   const texts = await Promise.all(
     genes.map(g =>
-      fetch(`expr_${g}.csv`).then(r => {
-        if (!r.ok) throw new Error(`failed to load expr_${g}.csv`);
+      fetch(`${BASE}expr_${g}.csv`).then(r => {
+        if (!r.ok) throw new Error(`failed to load ${BASE}expr_${g}.csv`);
         return r.text();
       })
     )

@@ -1,0 +1,6 @@
+x,y,z,species,label,ai_flag
+5.12,3.23,-1.44,Arabidopsis,Root_Hair,1
+2.44,-1.11,0.78,Pennycress,Endodermis,0
+-3.21,4.52,-2.14,Soybean,Epidermis,1
+1.23,-0.94,2.77,Rice,Cortex,0
+-2.87,-3.41,1.55,Maize,Phloem,0
